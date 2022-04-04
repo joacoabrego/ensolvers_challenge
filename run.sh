@@ -10,5 +10,6 @@
     process_id=$!
     cd ../challenge-frontend
     npm install &
-    wait
+    process_id=$!
+    wait $process_id
     npm start
