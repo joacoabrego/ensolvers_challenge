@@ -6,11 +6,13 @@ import {
   IsEmpty,
 } from 'class-validator';
 
-export class CreateTodoDto {
+export class UpdateTodoDto {
   @IsEmpty()
   id: number;
   @IsNotEmpty()
   @IsString()
   @MinLength(3)
   name: string;
+  @IsEmpty()
+  completed: boolean;
 }

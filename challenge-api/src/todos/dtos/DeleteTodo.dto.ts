@@ -6,11 +6,10 @@ import {
   IsEmpty,
 } from 'class-validator';
 
-export class CreateTodoDto {
+export class DeleteTodoDto {
   @IsEmpty()
   id: number;
   @IsNotEmpty()
-  @IsString()
-  @MinLength(3)
-  name: string;
+  @IsBoolean()
+  isActive: boolean;
 }

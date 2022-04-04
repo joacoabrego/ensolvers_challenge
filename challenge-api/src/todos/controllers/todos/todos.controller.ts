@@ -13,6 +13,8 @@ import {
   ValidationPipe,
 } from '@nestjs/common';
 import { CreateTodoDto } from 'src/todos/dtos/CreateTodo.dto';
+import { UpdateTodoDto } from 'src/todos/dtos/UpdateTodo.dto';
+import { DeleteTodoDto } from 'src/todos/dtos/DeleteTodo.dto';
 import { TodosService } from 'src/todos/services/todos/todos.service';
 
 @Controller('todos')
@@ -56,5 +58,14 @@ export class TodosController {
   @Put('/:id/restore')
   restoreTodo(@Param('id', ParseIntPipe) id: number) {
     return this.todosService.restoreTodo(id);
+  }
+
+  @Put('/:id/mark/complete')
+  markComplete(@Param('id', ParseIntPipe) id: number) {
+    return this.todosService.markComplete(id);
+  }
+  @Put('/:id/mark/incomplete')
+  markIncomplete(@Param('id', ParseIntPipe) id: number) {
+    return this.todosService.markIncomplete(id);
   }
 }

@@ -13,6 +13,12 @@ export class Todo {
 
   @Column({
     type: 'bool',
+    default: false,
+  })
+  completed: boolean;
+
+  @Column({
+    type: 'bool',
     default: true,
   })
   isActive: boolean;

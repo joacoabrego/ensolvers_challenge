@@ -12,7 +12,11 @@ export class TodosService {
   ) {}
 
   getTodos() {
-    return this.todosRepository.find();
+    return this.todosRepository.find({
+      where: {
+        isActive: true,
+      },
+    });
   }
 
   getTodoById(id: number) {
@@ -31,5 +35,11 @@ export class TodosService {
   }
   restoreTodo(id: number) {
     return this.todosRepository.update(id, { isActive: true });
+  }
+  markComplete(id: number) {
+    return this.todosRepository.update(id, { completed: true });
+  }
+  markIncomplete(id: number) {
+    return this.todosRepository.update(id, { completed: false });
   }
 }

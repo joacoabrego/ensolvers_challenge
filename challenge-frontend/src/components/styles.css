@@ -1,0 +1,10 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 50vw;
+  height: 10vh;
+  align-items: center;
+  border: 10px dashed black;
+  border-width: 1px;
+  border-radius: 15px;
+}
